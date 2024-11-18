@@ -4,6 +4,9 @@ from PIL import Image
 
 def show_donate(imgpath="res/QRcode.jpg"):
     try:
-        print("如果帮助到了您请记得给个star")
+        img = Image.open(imgpath)
+        print("感觉还不错? 来请作者喝杯coffee~")
+        img.show()
+        print("不希望显示赞赏码? 删除res文件夹的QRcode文件就好啦~")
     except FileNotFoundError:
         return

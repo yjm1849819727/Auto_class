@@ -1,3 +1,4 @@
+# encoding=utf-8
 import asyncio
 import time
 import traceback
@@ -8,11 +9,13 @@ from playwright._impl._errors import TargetClosedError
 from modules.logger import Logger
 from modules.configs import Config
 from modules.progress import get_course_progress, show_course_progress
+from modules.support import show_donate
 from modules.utils import optimize_page, get_lesson_name, get_filtered_class, get_video_attr
 from modules.slider import slider_verify
 from modules.tasks import video_optimize, play_video, skip_questions, wait_for_verify
 from modules import installer
 
+# 获取全局事件循环
 event_loop_verify = asyncio.Event()
 event_loop_answer = asyncio.Event()
 
@@ -193,6 +196,7 @@ async def main(config: Config):
                 await working_loop(page, is_new_version=is_new_version)
         print("==" * 10)
         logger.info("所有课程已学习完毕!")
+        show_donate("res/QRcode.jpg")
     except Exception as e:
         logger.error(repr(e), line_break=True)
         logger.write_log(traceback.format_exc())

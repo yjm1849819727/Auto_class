@@ -67,7 +67,8 @@ class Config:
             course_urls.append(course_url)
         return course_urls
 
-
+    # @property修饰器可设置属性
+    # 这样写可实时响应配置变化
     @property
     def limitMaxTime(self) -> float:
         self._read_config()
