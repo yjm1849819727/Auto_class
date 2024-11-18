@@ -1,0 +1,28 @@
+[18:16:08] [INFO] 程序启动中...
+[18:16:10] [INFO] 正在启动edge浏览器...
+[18:16:16] edge浏览器启动完成.
+[18:16:16] stealth.js注入完成.
+[18:16:16] 窗口大小设置完成.
+[18:16:16] [INFO] 请手动填写账号密码...
+[18:16:16] [INFO] 正在等待登录完成...
+[18:16:19] 浏览器已关闭,安全验证模块已下线.
+[18:16:19] [ERROR] TargetClosedError('Target page, context or browser has been closed')
+[18:16:19] Traceback (most recent call last):
+  File "e:\Github_desktop\Auto_class\Autoclass.py", line 175, in main
+    await auto_login(config, page, modules)
+  File "e:\Github_desktop\Auto_class\Autoclass.py", line 31, in auto_login
+    await page.wait_for_timeout(500)
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\async_api\_generated.py", line 11788, in wait_for_timeout
+    await self._impl_obj.wait_for_timeout(timeout=timeout)
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\_impl\_page.py", line 981, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\_impl\_frame.py", line 764, in wait_for_timeout
+    await self._channel.send("waitForTimeout", locals_to_params(locals()))
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "E:\anaconda3\envs\cs61a\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+[18:16:19] [ERROR] 浏览器被关闭,程序退出.
