@@ -1,6 +1,6 @@
 import os
 import shutil
-name = "Autovisor"
+name = "Autclassr"
 os.system(
     "pyinstaller "
     "--log-level=INFO "
@@ -9,7 +9,7 @@ os.system(
     "-i ./res/zhs.ico "
     "--onedir "
     f"--name={name} "
-    "./Autovisor.py "
+    "./Autoclass.py "
     "--exclude-module cv2 "
     "--exclude-module numpy "
 )
@@ -18,4 +18,4 @@ shutil.copyfile("./res/QRcode.jpg", f"./dist/{name}/res/QRcode.jpg")
 shutil.copyfile("./configs.ini", f"./dist/{name}/configs.ini")
 shutil.copyfile("./res/stealth.min.js", f"./dist/{name}/res/stealth.min.js")
 shutil.rmtree("./build", ignore_errors=True)
-os.remove("./Autovisor.spec")
+os.remove("./Autoclass.spec")
