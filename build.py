@@ -1,6 +1,6 @@
 import os
 import shutil
-name = "Autclassr"
+name = "Autclass"
 os.system(
     "pyinstaller "
     "--log-level=INFO "
